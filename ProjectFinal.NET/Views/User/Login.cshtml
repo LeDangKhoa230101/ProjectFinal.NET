@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_AuthLayout.cshtml";
+}
+
+<div class="login-form">
+    <div class="title">Login</div>
+    <form action="#">
+        <div class="input-boxes">
+            <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Enter your password" required>
+            </div>
+            <div class="text"></div>
+            <div class="button input-box">
+                <input type="submit" value="Login">
+            </div>
+            <div class="text sign-up-text">Don't have an account? <a href="/User/Register">Sigup now</a></div>
+        </div>
+    </form>
+</div>
+
