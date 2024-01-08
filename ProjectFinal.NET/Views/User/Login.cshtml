@@ -1,4 +1,4 @@
-﻿
+﻿@model ProjectFinal.NET.Models.LoginVM
 @{
     ViewData["Title"] = "Login";
     Layout = "~/Views/Shared/_AuthLayout.cshtml";
@@ -6,15 +6,23 @@
 
 <div class="login-form">
     <div class="title">Login</div>
-    <form action="#">
+    <!-- Kiểm tra và hiển thị thông báo thành công -->
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    <form asp-action="Login" method="post" asp-route-returnurl="@ViewBag.ReturnUrl"> 
         <div class="input-boxes">
             <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="email" placeholder="Enter your email" required>
+                <input type="email" name="Email" placeholder="Enter your email" required>
             </div>
             <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Enter your password" required>
+                <input type="password" name="Password" placeholder="Enter your password" required>
             </div>
             <div class="text"></div>
             <div class="button input-box">

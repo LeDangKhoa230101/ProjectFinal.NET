@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using ProjectFinal.NET.Data;
 
@@ -8,6 +9,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<DotnetContext>(options => {
     options.UseSqlServer(builder.Configuration.GetConnectionString("Dotnet"));
 });
+builder.Services.AddAuthentication
+	(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options => { options.AccessDeniedPath = "/AccessDenied"; }
+	);
 
 var app = builder.Build();
 
@@ -22,6 +26,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
