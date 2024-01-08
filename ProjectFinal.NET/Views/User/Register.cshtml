@@ -1,4 +1,4 @@
-﻿
+﻿@model ProjectFinal.NET.Models.RegisterVM
 @{
     ViewData["Title"] = "Register";
     Layout = "~/Views/Shared/_AuthLayout.cshtml";
@@ -6,19 +6,20 @@
 
 <div class="signup-form">
     <div class="title">Signup</div>
-    <form action="#">
+    <form asp-action="Register" enctype="multipart/form-data" method="post">
         <div class="input-boxes">
             <div class="input-box">
                 <i class="fas fa-user"></i>
-                <input type="email" placeholder="Enter your email" required>
+                <input asp-for="Email" type="email" placeholder="Email" required>
             </div>
             <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="password" placeholder="Enter your password" required>
+                <<input asp-for="Password" type="password" placeholder="Password" required>
+
             </div>
             <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Enter your confirm password" required>
+                <input asp-for="ConfirmPassword" type="password" placeholder="ConfirmPassword" required>
             </div>
             <div class="button input-box">
                 <input type="submit" value="Signup">

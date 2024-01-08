@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\CShape\\ProjectFinal.NET\\ProjectFinal.NET\\ProjectFinal.NET.csproj": {}
+    "D:\\dotnet1\\ProjectFinal.NET\\ProjectFinal.NET.csproj": {}
   },
   "projects": {
-    "F:\\CShape\\ProjectFinal.NET\\ProjectFinal.NET\\ProjectFinal.NET.csproj": {
+    "D:\\dotnet1\\ProjectFinal.NET\\ProjectFinal.NET.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\CShape\\ProjectFinal.NET\\ProjectFinal.NET\\ProjectFinal.NET.csproj",
+        "projectUniqueName": "D:\\dotnet1\\ProjectFinal.NET\\ProjectFinal.NET.csproj",
         "projectName": "ProjectFinal.NET",
-        "projectPath": "F:\\CShape\\ProjectFinal.NET\\ProjectFinal.NET\\ProjectFinal.NET.csproj",
-        "packagesPath": "C:\\Users\\ledan\\.nuget\\packages\\",
-        "outputPath": "F:\\CShape\\ProjectFinal.NET\\ProjectFinal.NET\\obj\\",
+        "projectPath": "D:\\dotnet1\\ProjectFinal.NET\\ProjectFinal.NET.csproj",
+        "packagesPath": "C:\\Users\\tranl\\.nuget\\packages\\",
+        "outputPath": "D:\\dotnet1\\ProjectFinal.NET\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ledan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tranl\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,24 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[7.0.11, )"
