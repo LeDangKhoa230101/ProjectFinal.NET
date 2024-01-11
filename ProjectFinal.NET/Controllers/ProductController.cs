@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using ProjectFinal.NET.Data;
 using ProjectFinal.NET.Models;
+using System.Diagnostics;
 namespace ProjectFinal.NET.Controllers
 {
     public class ProductController : Controller
@@ -9,18 +11,24 @@ namespace ProjectFinal.NET.Controllers
         public readonly DotnetContext db;
         public ProductController(DotnetContext context)
         {
-            this.db = context;
+            db = context;
         }
-        public IActionResult Detail(int id)
+        [Route("Product/Detail/{productId}")]
+        public IActionResult Detail(int productId)
         {
-            var data = db.Products.Include(p => p.IdCateNavigation).SingleOrDefault(p => p.IdProduct == id);
+            var data = db.Products
+        .Include(p => p.IdBrandNavigation)
+        .Include(p => p.IdCateNavigation)
+        .FirstOrDefault(p => p.IdProduct == productId);
+
+
             if (data == null)
             {
-                TempData["Message"] = $"không thấ mã sản phẩm có mã {id}";
-                return Redirect("/404");
+                TempData["Message"] = $"không thấ mã sản phẩm có mã {productId}";
+                return NotFound();
             }
-            var result = new ProductsDetailVM
-            {
+           var result = new ProductsDetailVM
+            { 
                 IdProduct = data.IdProduct,
                 ProductName = data.NameProduct,
                 Image = data.Image,
@@ -28,8 +36,8 @@ namespace ProjectFinal.NET.Controllers
                 PriceOld = data.PriceOld ?? 0,
                 Quantity = data.Quantity ?? 0,
                 Description = data.Description,
-                Brand = data.IdBrandNavigation.BrandName,
-                Cate = data.IdCateNavigation.CateName,
+                Brand = data.IdBrandNavigation.BrandName ?? "DefaultBrand",
+                Cate = data.IdCateNavigation.CateName ?? "DefaultCategory",
                 Review = "đfd",
                 Sales = 2
             };
@@ -42,5 +50,6 @@ namespace ProjectFinal.NET.Controllers
         {
             return View();
         }
+       
     }
 }
