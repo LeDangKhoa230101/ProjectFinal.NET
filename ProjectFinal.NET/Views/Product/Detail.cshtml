@@ -1,5 +1,4 @@
-﻿
-        @model ProjectFinal.NET.Models.ProductsDetailVM
+﻿@model ProjectFinal.NET.Models.ProductsDetailVM
 @{
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -55,6 +54,8 @@
             <!-- /Product thumb imgs -->
             <!-- Product details -->
             <div class="col-md-5">
+               
+                                  
                 <div class="product-details">
                     <h2 class="product-name">@Model.ProductName</h2>
                    @*  <div>
@@ -91,9 +92,8 @@
                     </ul>
 
                     <ul class="product-links">
-                        <li>Category:</li>
-                        <li><a href="#">Headphones</a></li>
-                        <li><a href="#">Accessories</a></li>
+                        <li>Category: @Model.Cate</li>
+                        
                     </ul>
 
                     <ul class="product-links">
@@ -105,6 +105,7 @@
                     </ul>
 
                 </div>
+                }
             </div>
             <!-- /Product details -->
             <!-- Product tab -->
