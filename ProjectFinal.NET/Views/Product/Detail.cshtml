@@ -3,7 +3,7 @@
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<meta charset="UTF-8">
+
 <!-- SECTION -->
 <div class="section">
     <!-- container -->
@@ -78,7 +78,7 @@
                         <div class="qty-label">
                             Qty
                             <div class="input-number">
-                                <input type="number">
+                                <input type="number" id="quantityInput" value="@Model.Quantity">
                                 <span class="qty-up">+</span>
                                 <span class="qty-down">-</span>
                             </div>
