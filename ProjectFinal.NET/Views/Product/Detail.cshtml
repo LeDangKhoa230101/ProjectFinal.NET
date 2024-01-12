@@ -3,7 +3,7 @@
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<meta charset="UTF-8">
 <!-- SECTION -->
 <div class="section">
     <!-- container -->
@@ -14,10 +14,10 @@
             <div class="col-md-5 col-md-push-2">
                 <div id="product-main-img">
                     <div class="product-preview">
-                        <img src="~/img/product01.png" alt="">
+                        <img src="@Model.Image" alt="">
                     </div>
 
-                    <div class="product-preview">
+                 @*    <div class="product-preview">
                         <img src="~/img/product03.png" alt="">
                     </div>
 
@@ -27,7 +27,7 @@
 
                     <div class="product-preview">
                         <img src="~/img/product08.png" alt="">
-                    </div>
+                    </div> *@
                 </div>
             </div>
             <!-- /Product main img -->
@@ -35,10 +35,10 @@
             <div class="col-md-2  col-md-pull-5">
                 <div id="product-imgs">
                     <div class="product-preview">
-                        <img src="~/img/product01.png" alt="">
-                    </div>
-
-                    <div class="product-preview">
+                        <img src="@Model.Image" alt="">
+                    </div> 
+ 
+@*                     <div class="product-preview">
                         <img src="~/img/product03.png" alt="">
                     </div>
 
@@ -48,7 +48,7 @@
 
                     <div class="product-preview">
                         <img src="~/img/product08.png" alt="">
-                    </div>
+                    </div> *@ 
                 </div>
             </div>
             <!-- /Product thumb imgs -->
@@ -69,7 +69,7 @@
                         <a class="review-link" href="#">10 Review(s) | Add your review</a>
                     </div> *@
                     <div>
-                        <h3 class="product-price">@Model.PriceNew <del class="product-old-price">@Model.PriceOld</del></h3>
+                        <h3 class="product-price">@Model.PriceNew vnđ<del class="product-old-price">@Model.PriceOld vnđ</del></h3>
                         <span class="product-available">In Stock</span>
                     </div>
                     <p>@Model.Description</p>
@@ -109,7 +109,7 @@
             </div>
             <!-- /Product details -->
             <!-- Product tab -->
-            <div class="col-md-12">
+            @* <div class="col-md-12">
                 <div id="product-tab">
                     <!-- product tab nav -->
                     <ul class="tab-nav">
@@ -315,7 +315,7 @@
                     </div>
                     <!-- /product tab content  -->
                 </div>
-            </div>
+            </div> *@
             <!-- /product tab -->
         </div>
         <!-- /row -->
@@ -324,7 +324,7 @@
 </div>
 <!-- /SECTION -->
 <!-- Section -->
-<div class="section">
+@* <div class="section">
     <!-- container -->
     <div class="container">
         <!-- row -->
@@ -456,7 +456,7 @@
         <!-- /row -->
     </div>
     <!-- /container -->
-</div>
+</div> *@
 <!-- /Section -->
 <!-- NEWSLETTER -->
 <div id="newsletter" class="section">
