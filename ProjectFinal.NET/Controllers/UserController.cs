@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ProjectFinal.NET.Data;
 using ProjectFinal.NET.Helper;
@@ -24,62 +26,43 @@ namespace ProjectFinal.NET.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginVM model, string? ReturnUrl)
         {
-            ViewBag.ReturnUrl = ReturnUrl;
             if (ModelState.IsValid)
             {
-                var user = db.Users.SingleOrDefault(u => u.Email == model.Email);
-                if (user == null)
+               
+                var user = db.Users.FirstOrDefault(u => u.Email == model.Email);
+
+                if (user != null)
                 {
-                    ModelState.AddModelError("ERROR", "ko cóa tk này");
-                }
-                else
-                {
-                    if (!(user.IsActive ?? false))
+
+                    if (!(user.IsActive??false))
                     {
-                        ModelState.AddModelError("ERRO", "tk bị ban");
+                        // Người dùng không được kích hoạt, handle accordingly
+                        ModelState.AddModelError("", "Tài khoản của bạn chưa được kích hoạt. Liên hệ với quản trị viên để biết thêm thông tin.");
+                        return View();
+                    }
+
+                    // Hash the combined password using the same method used during registration
+                    string hashedPassword = model.Password.ToMD5Hash();
+
+                    // Compare the hashed password with the stored hashed password
+                    if (hashedPassword == user.Password)
+                    {
+                        return RedirectToAction("Index", "Home");
+                        // Passwords match, user is authenticated
+                        
                     }
                     else
                     {
-                        if (user.Password != model.Password.ToMD5Hash())
-                        {
-                            ModelState.AddModelError("ERROR", "sai tk or mk");
-                        }
-                        else
-                        {
-                            var claims = new List<Claim>
-                            {
-                                new Claim(ClaimTypes.Email, model.Email),
-
-                                // clian đọng phan quyen 
-                                new Claim(ClaimTypes.Role,"User")
-                            };
-                            var claimIdentity = new ClaimsIdentity(claims, "login");
-                            var claimPrincipal = new ClaimsPrincipal(claimIdentity);
-
-                            await HttpContext.SignInAsync(claimPrincipal);
-                            // Thêm thông báo thành công vào TempData
-                            TempData["SuccessMessage"] = "Đăng nhập thành công!";
-                            TempData.Keep("SuccessMessage");
-
-                            if (Url.IsLocalUrl(ReturnUrl))
-                                    {
-                                        return  Redirect(ReturnUrl);
-                                    }
-                                        else
-                                        {
-                                          return Redirect("/");
-                                        }
-
-
-                        }
-
-                       
+                        // Passwords do not match
+                        // Handle accordingly, perhaps show an error message
+                        ModelState.AddModelError("", "Email hoặc mật khẩu không đúng");
                     }
-                } 
-               
-                
+                }
+
+                // Invalid credentials, add a model error
+                ModelState.AddModelError("", "Email hoặc mật khẩu không đúng");
             }
-            return RedirectToAction("Index");
+            return View();
         }
         [HttpGet]
         public IActionResult Register()
@@ -93,12 +76,10 @@ namespace ProjectFinal.NET.Controllers
             {
                 try
                 {
-                    string randomKey = Util.GenerateRamdomkey();
-                    // Kết hợp mật khẩu với chuỗi ngẫu nhiên
-                    string combinedPassword = model.Password + randomKey;
+                    
 
                     // Hash mật khẩu kết hợp bằng MD5
-                    string hashedPassword = combinedPassword.ToMD5Hash();
+                    string hashedPassword = model.Password.ToMD5Hash();
 
                     var user = new User
                     {
@@ -122,6 +103,11 @@ namespace ProjectFinal.NET.Controllers
 
             }
             return RedirectToAction("Login");
+        }
+        [Authorize]
+        public IActionResult Profile()
+        {
+            return View();
         }
     }
 }
