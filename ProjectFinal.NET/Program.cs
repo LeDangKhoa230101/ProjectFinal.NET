@@ -10,7 +10,9 @@ builder.Services.AddDbContext<DotnetContext>(options => {
     options.UseSqlServer(builder.Configuration.GetConnectionString("Dotnet"));
 });
 builder.Services.AddAuthentication
-	(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options => { options.AccessDeniedPath = "/AccessDenied"; }
+	(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options => {
+		options.LoginPath = "/";
+		options.AccessDeniedPath = "/AccessDenied"; }
 	);
 
 var app = builder.Build();
