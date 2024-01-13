@@ -123,6 +123,14 @@ namespace ProjectFinal.NET.Controllers
             }
             return RedirectToAction("Login");
         }
+
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            // Redirect to home page 
+            return RedirectToAction("Index", "Home");
+        }
         [Authorize]
         public IActionResult Profile()
         {

@@ -11,7 +11,7 @@ builder.Services.AddDbContext<DotnetContext>(options => {
 });
 builder.Services.AddAuthentication
 	(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options => {
-		options.LoginPath = "/";
+		options.LoginPath = "/User/Login";
 		options.AccessDeniedPath = "/AccessDenied"; }
 	);
 
