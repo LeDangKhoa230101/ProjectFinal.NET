@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\.github",
+    "\\.github\\workflows"
   ],
-  "SelectedNode": "\\ProjectFinal.NET.sln",
   "PreviewInSolutionExplorer": false
 }

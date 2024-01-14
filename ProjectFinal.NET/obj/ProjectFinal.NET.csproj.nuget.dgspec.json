@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ledan\\OneDrive\\Desktop\\ProjectFinal.NET\\ProjectFinal.NET\\ProjectFinal.NET.csproj": {}
+    "D:\\ProjectFinal.NET\\ProjectFinal.NET\\ProjectFinal.NET.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ledan\\OneDrive\\Desktop\\ProjectFinal.NET\\ProjectFinal.NET\\ProjectFinal.NET.csproj": {
+    "D:\\ProjectFinal.NET\\ProjectFinal.NET\\ProjectFinal.NET.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ledan\\OneDrive\\Desktop\\ProjectFinal.NET\\ProjectFinal.NET\\ProjectFinal.NET.csproj",
+        "projectUniqueName": "D:\\ProjectFinal.NET\\ProjectFinal.NET\\ProjectFinal.NET.csproj",
         "projectName": "ProjectFinal.NET",
-        "projectPath": "C:\\Users\\ledan\\OneDrive\\Desktop\\ProjectFinal.NET\\ProjectFinal.NET\\ProjectFinal.NET.csproj",
-        "packagesPath": "C:\\Users\\ledan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ledan\\OneDrive\\Desktop\\ProjectFinal.NET\\ProjectFinal.NET\\obj\\",
+        "projectPath": "D:\\ProjectFinal.NET\\ProjectFinal.NET\\ProjectFinal.NET.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "D:\\ProjectFinal.NET\\ProjectFinal.NET\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ledan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -82,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
