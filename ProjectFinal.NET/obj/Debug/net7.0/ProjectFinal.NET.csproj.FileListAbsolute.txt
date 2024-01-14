@@ -733,3 +733,15 @@ C:\Users\ledan\OneDrive\Desktop\ProjectFinal.NET\ProjectFinal.NET\obj\Debug\net7
 C:\Users\ledan\OneDrive\Desktop\ProjectFinal.NET\ProjectFinal.NET\obj\Debug\net7.0\ProjectFinal.NET.pdb
 C:\Users\ledan\OneDrive\Desktop\ProjectFinal.NET\ProjectFinal.NET\obj\Debug\net7.0\ProjectFinal.NET.genruntimeconfig.cache
 C:\Users\ledan\OneDrive\Desktop\ProjectFinal.NET\ProjectFinal.NET\obj\Debug\net7.0\ref\ProjectFinal.NET.dll
+D:\ProjectFinal.NET\ProjectFinal.NET\obj\Debug\net7.0\ProjectFinal.NET.csproj.AssemblyReference.cache
+D:\ProjectFinal.NET\ProjectFinal.NET\obj\Debug\net7.0\ProjectFinal.NET.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProjectFinal.NET\ProjectFinal.NET\obj\Debug\net7.0\ProjectFinal.NET.AssemblyInfoInputs.cache
+D:\ProjectFinal.NET\ProjectFinal.NET\obj\Debug\net7.0\ProjectFinal.NET.AssemblyInfo.cs
+D:\ProjectFinal.NET\ProjectFinal.NET\obj\Debug\net7.0\ProjectFinal.NET.csproj.CoreCompileInputs.cache
+D:\ProjectFinal.NET\ProjectFinal.NET\obj\Debug\net7.0\ProjectFinal.NET.MvcApplicationPartsAssemblyInfo.cache
+D:\ProjectFinal.NET\ProjectFinal.NET\obj\Debug\net7.0\ProjectFinal.NET.RazorAssemblyInfo.cache
+D:\ProjectFinal.NET\ProjectFinal.NET\obj\Debug\net7.0\ProjectFinal.NET.RazorAssemblyInfo.cs
+D:\ProjectFinal.NET\ProjectFinal.NET\obj\Debug\net7.0\ProjectFinal.NET.sourcelink.json
+D:\ProjectFinal.NET\ProjectFinal.NET\obj\Debug\net7.0\ProjectFinal.NET.dll
+D:\ProjectFinal.NET\ProjectFinal.NET\obj\Debug\net7.0\refint\ProjectFinal.NET.dll
+D:\ProjectFinal.NET\ProjectFinal.NET\obj\Debug\net7.0\ProjectFinal.NET.pdb
