@@ -13,7 +13,7 @@ namespace ProjectFinal.NET.Controllers
             db = context;
         }
 
-        public IActionResult Store(int? brandId, int? categoryId)
+        public IActionResult Store(int? brandId, int? categoryId, string searchTerm)
         {
             ViewBag.Categories = GetCategories();
             ViewBag.Brands = GetBrands();
@@ -29,8 +29,15 @@ namespace ProjectFinal.NET.Controllers
             {
                 products = products.Where(p => p.IdCate == categoryId.Value);
             }
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                products = products.Where(p => p.NameProduct.Contains(searchTerm));
+            }
 
             List<Product> filteredProducts = products.ToList();
+
+            // Pass the searchTerm to the view to display it
+            ViewBag.SearchTerm = searchTerm;
 
             return View(filteredProducts);
         }

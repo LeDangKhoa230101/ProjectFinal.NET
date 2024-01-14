@@ -57,7 +57,7 @@
                     <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
                 </ul>
                 <ul class="header-links pull-right">
-<<<<<<< HEAD
+
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li>
@@ -75,7 +75,7 @@
                                 My Account
                             </a>
                         </li>
-=======
+
                    @if (User.Identity.IsAuthenticated)
     {
         <li>
@@ -93,18 +93,18 @@
                             My Account
                         </a>
                     </li>
->>>>>>> a70b03dcb3da792ea46ca1e72f7396047b565d15
+
                         <li>
                             <a asp-controller="User" asp-action="Logout">
                                 <i class="fa fa-sign-out"></i>
                                 Logout
                             </a>
                         </li>
-<<<<<<< HEAD
+
                     }
-=======
+
     }
->>>>>>> a70b03dcb3da792ea46ca1e72f7396047b565d15
+
                     else
                     {
                         <!-- Hiển thị nút "My Account" khi chưa đăng nhập -->
@@ -115,10 +115,7 @@
                             </a>
                         </li>
                     }
-<<<<<<< HEAD
-=======
-                  
->>>>>>> a70b03dcb3da792ea46ca1e72f7396047b565d15
+
                 </ul>
             </div>
         </div>
@@ -141,9 +138,9 @@
                     <!-- SEARCH BAR -->
                     <div class="col-md-6">
                         <div class="header-search">
-                            <form>
-                                <input class="input" placeholder="Search here" style="width: calc(100% - 160px); margin-right: -4px; border-top-left-radius: 40px; border-bottom-left-radius: 40px;">
-                                <button class="search-btn">Search</button>
+                            <form action="@Url.Action("Store", "Store")" method="get">
+                                <input class="input" name="searchTerm" placeholder="Search here" style="width: calc(100% - 160px); margin-right: -4px; border-top-left-radius: 40px; border-bottom-left-radius: 40px;">
+                                <button class="search-btn" type="submit">Search</button>
                             </form>
                         </div>
                     </div>
