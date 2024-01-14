@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\dotnet1\\ProjectFinal.NET\\ProjectFinal.NET.csproj": {}
+    "C:\\Users\\ledan\\OneDrive\\Desktop\\ProjectFinal.NET\\ProjectFinal.NET\\ProjectFinal.NET.csproj": {}
   },
   "projects": {
-    "D:\\dotnet1\\ProjectFinal.NET\\ProjectFinal.NET.csproj": {
+    "C:\\Users\\ledan\\OneDrive\\Desktop\\ProjectFinal.NET\\ProjectFinal.NET\\ProjectFinal.NET.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\dotnet1\\ProjectFinal.NET\\ProjectFinal.NET.csproj",
+        "projectUniqueName": "C:\\Users\\ledan\\OneDrive\\Desktop\\ProjectFinal.NET\\ProjectFinal.NET\\ProjectFinal.NET.csproj",
         "projectName": "ProjectFinal.NET",
-        "projectPath": "D:\\dotnet1\\ProjectFinal.NET\\ProjectFinal.NET.csproj",
-        "packagesPath": "C:\\Users\\tranl\\.nuget\\packages\\",
-        "outputPath": "D:\\dotnet1\\ProjectFinal.NET\\obj\\",
+        "projectPath": "C:\\Users\\ledan\\OneDrive\\Desktop\\ProjectFinal.NET\\ProjectFinal.NET\\ProjectFinal.NET.csproj",
+        "packagesPath": "C:\\Users\\ledan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ledan\\OneDrive\\Desktop\\ProjectFinal.NET\\ProjectFinal.NET\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tranl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ledan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -82,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

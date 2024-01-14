@@ -47,9 +47,28 @@ namespace ProjectFinal.NET.Controllers
                     // Compare the hashed password with the stored hashed password
                     if (hashedPassword == user.Password)
                     {
-                        return RedirectToAction("Index", "Home");
+                        bool isAdmin = user.IsAdmin;
                         // Passwords match, user is authenticated
-                        
+                        var claims = new List<Claim>
+                {
+                     new Claim(ClaimTypes.Name, user.Email),
+                     new Claim(ClaimTypes.Role, isAdmin ? "Admin" : "User"),
+                    // Thêm các claim khác nếu cần, ví dụ: user ID, vv.
+                };
+
+                        var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+                        var authProperties = new AuthenticationProperties
+                        {
+                            // Tùy chỉnh các thuộc tính nếu cần
+                        };
+
+                        await HttpContext.SignInAsync(
+                            CookieAuthenticationDefaults.AuthenticationScheme,
+                            new ClaimsPrincipal(claimsIdentity),
+                            authProperties
+                            );
+                        return Redirect(ReturnUrl ?? Url.Action("Index", "Home"));
                     }
                     else
                     {
@@ -76,8 +95,6 @@ namespace ProjectFinal.NET.Controllers
             {
                 try
                 {
-                    
-
                     // Hash mật khẩu kết hợp bằng MD5
                     string hashedPassword = model.Password.ToMD5Hash();
 
@@ -104,6 +121,16 @@ namespace ProjectFinal.NET.Controllers
             }
             return RedirectToAction("Login");
         }
+
+        
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            // Redirect to home page 
+            return RedirectToAction("Index", "Home");
+        }
+
         [Authorize]
         public IActionResult Profile()
         {

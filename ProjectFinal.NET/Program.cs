@@ -11,9 +11,19 @@ builder.Services.AddDbContext<DotnetContext>(options => {
 });
 builder.Services.AddAuthentication
 	(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options => {
-		options.LoginPath = "/";
+		options.LoginPath = "/User/Login";
 		options.AccessDeniedPath = "/AccessDenied"; }
 	);
+
+// Add session shopping cart
+builder.Services.AddDistributedMemoryCache();
+
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(1);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 var app = builder.Build();
 
@@ -28,6 +38,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseSession();
 
 app.UseAuthentication();
 

@@ -9,75 +9,79 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProjectFinal.NET
 build_property.RootNamespace = ProjectFinal.NET
-build_property.ProjectDir = D:\dotnet1\ProjectFinal.NET\
+build_property.ProjectDir = C:\Users\ledan\OneDrive\Desktop\ProjectFinal.NET\ProjectFinal.NET\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\dotnet1\ProjectFinal.NET
+build_property.MSBuildProjectDirectory = C:\Users\ledan\OneDrive\Desktop\ProjectFinal.NET\ProjectFinal.NET
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/dotnet1/ProjectFinal.NET/Views/Admin/Index.cshtml]
+[C:/Users/ledan/OneDrive/Desktop/ProjectFinal.NET/ProjectFinal.NET/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dotnet1/ProjectFinal.NET/Views/Cart/Cart.cshtml]
+[C:/Users/ledan/OneDrive/Desktop/ProjectFinal.NET/ProjectFinal.NET/Views/Cart/Cart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDYXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dotnet1/ProjectFinal.NET/Views/Checkout/Checkout.cshtml]
+[C:/Users/ledan/OneDrive/Desktop/ProjectFinal.NET/ProjectFinal.NET/Views/Checkout/Checkout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcQ2hlY2tvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dotnet1/ProjectFinal.NET/Views/Home/Index.cshtml]
+[C:/Users/ledan/OneDrive/Desktop/ProjectFinal.NET/ProjectFinal.NET/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dotnet1/ProjectFinal.NET/Views/Product/Detail.cshtml]
+[C:/Users/ledan/OneDrive/Desktop/ProjectFinal.NET/ProjectFinal.NET/Views/Product/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dotnet1/ProjectFinal.NET/Views/Product/ProductManager.cshtml]
+[C:/Users/ledan/OneDrive/Desktop/ProjectFinal.NET/ProjectFinal.NET/Views/Product/ProductManager.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQcm9kdWN0TWFuYWdlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dotnet1/ProjectFinal.NET/Views/Shared/_AdminLayout.cshtml]
+[C:/Users/ledan/OneDrive/Desktop/ProjectFinal.NET/ProjectFinal.NET/Views/Shared/Components/CartWidget/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2FydFdpZGdldFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ledan/OneDrive/Desktop/ProjectFinal.NET/ProjectFinal.NET/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dotnet1/ProjectFinal.NET/Views/Shared/_AuthLayout.cshtml]
+[C:/Users/ledan/OneDrive/Desktop/ProjectFinal.NET/ProjectFinal.NET/Views/Shared/_AuthLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BdXRoTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dotnet1/ProjectFinal.NET/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/ledan/OneDrive/Desktop/ProjectFinal.NET/ProjectFinal.NET/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dotnet1/ProjectFinal.NET/Views/Store/Store.cshtml]
+[C:/Users/ledan/OneDrive/Desktop/ProjectFinal.NET/ProjectFinal.NET/Views/Store/Store.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVcU3RvcmUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dotnet1/ProjectFinal.NET/Views/User/Login.cshtml]
+[C:/Users/ledan/OneDrive/Desktop/ProjectFinal.NET/ProjectFinal.NET/Views/User/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dotnet1/ProjectFinal.NET/Views/User/Profile.cshtml]
+[C:/Users/ledan/OneDrive/Desktop/ProjectFinal.NET/ProjectFinal.NET/Views/User/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dotnet1/ProjectFinal.NET/Views/User/Register.cshtml]
+[C:/Users/ledan/OneDrive/Desktop/ProjectFinal.NET/ProjectFinal.NET/Views/User/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dotnet1/ProjectFinal.NET/Views/_ViewImports.cshtml]
+[C:/Users/ledan/OneDrive/Desktop/ProjectFinal.NET/ProjectFinal.NET/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dotnet1/ProjectFinal.NET/Views/_ViewStart.cshtml]
+[C:/Users/ledan/OneDrive/Desktop/ProjectFinal.NET/ProjectFinal.NET/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dotnet1/ProjectFinal.NET/Views/Shared/_Layout.cshtml]
+[C:/Users/ledan/OneDrive/Desktop/ProjectFinal.NET/ProjectFinal.NET/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-q5ys721kbj
