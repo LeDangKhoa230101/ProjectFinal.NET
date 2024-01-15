@@ -58,6 +58,7 @@
                 </ul>
                 <ul class="header-links pull-right">
 
+
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li>
@@ -75,35 +76,13 @@
                                 My Account
                             </a>
                         </li>
-
-                   @if (User.Identity.IsAuthenticated)
-    {
-        <li>
-            @if (User.IsInRole("Admin"))
-            {
-                <a href="/Admin/Index">
-                    <i class="fa fa-user-o"></i>
-                    Admin
-                </a>
-            }
-        </li>
-                    <li>
-                        <a href="/User/Login">
-                            <i class="fa fa-user-o"></i>
-                            My Account
-                        </a>
-                    </li>
-
                         <li>
                             <a asp-controller="User" asp-action="Logout">
                                 <i class="fa fa-sign-out"></i>
                                 Logout
                             </a>
                         </li>
-
                     }
-
-    }
 
                     else
                     {
