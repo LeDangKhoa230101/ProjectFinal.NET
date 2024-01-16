@@ -52,8 +52,16 @@ namespace ProjectFinal.NET.Controllers
                         // Passwords match, user is authenticated
                         var claims = new List<Claim>
                 {
+<<<<<<< HEAD
                      new Claim(ClaimTypes.Name, user.Email),
                     new Claim(ClaimTypes.Name, user.Email),
+=======
+
+                     new Claim(ClaimTypes.Name, user.Email),
+
+                    new Claim(ClaimTypes.Name, user.Email),
+
+>>>>>>> 90d8feb24e4ff4b8de6d2b0100961e0e616484de
                      new Claim(ClaimTypes.Role, isAdmin ? "Admin" : "User"),
                     // Thêm các claim khác nếu cần, ví dụ: user ID, vv.
                 };
@@ -122,6 +130,12 @@ namespace ProjectFinal.NET.Controllers
             return RedirectToAction("Login");
         }
 
+<<<<<<< HEAD
+=======
+
+        
+
+>>>>>>> 90d8feb24e4ff4b8de6d2b0100961e0e616484de
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
@@ -129,6 +143,10 @@ namespace ProjectFinal.NET.Controllers
             // Redirect to home page 
             return RedirectToAction("Index", "Home");
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 90d8feb24e4ff4b8de6d2b0100961e0e616484de
         [Authorize]
         public IActionResult Profile()
         {

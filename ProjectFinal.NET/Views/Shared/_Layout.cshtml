@@ -57,7 +57,13 @@
                     <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
                 </ul>
                 <ul class="header-links pull-right">
+<<<<<<< HEAD
                    @if (User.Identity.IsAuthenticated)
+=======
+
+
+                    @if (User.Identity.IsAuthenticated)
+>>>>>>> 90d8feb24e4ff4b8de6d2b0100961e0e616484de
                     {
                         <li>
                             @if (User.IsInRole("Admin"))
@@ -69,12 +75,25 @@
                             }
                         </li>
                         <li>
+<<<<<<< HEAD
+=======
+                            <a href="/User/Login">
+                                <i class="fa fa-user-o"></i>
+                                My Account
+                            </a>
+                        </li>
+                        <li>
+>>>>>>> 90d8feb24e4ff4b8de6d2b0100961e0e616484de
                             <a asp-controller="User" asp-action="Logout">
                                 <i class="fa fa-sign-out"></i>
                                 Logout
                             </a>
                         </li>
                     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 90d8feb24e4ff4b8de6d2b0100961e0e616484de
                     else
                     {
                         <!-- Hiển thị nút "My Account" khi chưa đăng nhập -->
@@ -85,6 +104,10 @@
                             </a>
                         </li>
                     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 90d8feb24e4ff4b8de6d2b0100961e0e616484de
                 </ul>
             </div>
         </div>
@@ -156,8 +179,13 @@
             <div id="responsive-nav">
                 <!-- NAV -->
                 <ul class="main-nav nav navbar-nav">
+<<<<<<< HEAD
                     <li class="active"><a href="/">Home</a></li>
                     <li><a href="/Store/Store">Store</a></li>
+=======
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="/Store/Store">Store</a></li>            
+>>>>>>> 90d8feb24e4ff4b8de6d2b0100961e0e616484de
                 </ul>
                 <!-- /NAV -->
             </div>

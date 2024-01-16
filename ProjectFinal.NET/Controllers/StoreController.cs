@@ -6,6 +6,10 @@ namespace ProjectFinal.NET.Controllers
 {
     public class StoreController : Controller
     {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 90d8feb24e4ff4b8de6d2b0100961e0e616484de
         public readonly DotnetContext db;
         public StoreController(DotnetContext context)
         {
@@ -14,7 +18,10 @@ namespace ProjectFinal.NET.Controllers
 
         public IActionResult Store(int? brandId, int? categoryId, string searchTerm)
         {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 90d8feb24e4ff4b8de6d2b0100961e0e616484de
             ViewBag.Categories = GetCategories();
             ViewBag.Brands = GetBrands();
 
@@ -29,7 +36,10 @@ namespace ProjectFinal.NET.Controllers
             {
                 products = products.Where(p => p.IdCate == categoryId.Value);
             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 90d8feb24e4ff4b8de6d2b0100961e0e616484de
             if (!string.IsNullOrEmpty(searchTerm))
             {
                 products = products.Where(p => p.NameProduct.Contains(searchTerm));
@@ -52,5 +62,9 @@ namespace ProjectFinal.NET.Controllers
             // Replace this with your actual logic to fetch brands from the database
             return db.Categories.ToList();
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 90d8feb24e4ff4b8de6d2b0100961e0e616484de
     }
 }
