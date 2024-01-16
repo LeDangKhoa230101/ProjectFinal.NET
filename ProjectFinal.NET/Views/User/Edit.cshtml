@@ -1,0 +1,56 @@
+﻿@model ProjectFinal.NET.Data.User
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div style="padding: 0 16px 30px 16px;">
+    <h2>User Edit</h2>
+
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="UserId" />
+                <div class="form-group" style="display:flex;align-items: center;margin-bottom: 12px;">
+                    <label asp-for="UserId" class="control-label" style="min-width: 120px;"></label>
+                    <input asp-for="UserId" class="form-control" style="width: 42%; pointer-events: none;" />
+                    <span asp-validation-for="UserId" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="display:flex;align-items: center;margin-bottom: 12px;">
+                    <label asp-for="Email" class="control-label" style="min-width: 120px;"></label>
+                    <input asp-for="Email" class="form-control" style="width: 42%;" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="display:flex;align-items: center;margin-bottom: 12px;">
+                    <label asp-for="Password" class="control-label" style="min-width: 120px;"></label>
+                    <input asp-for="Password" class="form-control" style="width: 42%;" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="display:flex;align-items: center;margin-bottom: 12px;">
+                    <label asp-for="CreatedAt" class="control-label" style="min-width: 120px;"></label>
+                    <input asp-for="CreatedAt" class="form-control" style="width: 42%;" />
+                    <span asp-validation-for="CreatedAt" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="display:flex;align-items: center;margin-bottom: 12px;">
+                    <label asp-for="IsActive" class="control-label" style="min-width: 120px;"></label>
+                    <input asp-for="IsActive" class="form-control" style="width: 42%;" />
+                    <span asp-validation-for="IsActive" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="display:flex;align-items: center;margin-bottom: 12px;">
+                    <label asp-for="IsAdmin" class="control-label" style="min-width: 120px;"></label>
+                    <input asp-for="IsAdmin" class="form-control" style="width: 42%;" />
+                    <span asp-validation-for="IsAdmin" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="margin: 20px 0;">
+                    <input type="submit" value="Save" class="btn btn-primary"
+                           style="font-size: 17px;padding: 2px 20px;border-color: blue;color: blue;cursor: pointer;" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="UserManager" style="font-size: 18px;color: red;">Back to Manager</a>
+    </div>
+</div>

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ProjectFinal.NET.Data;
 using ProjectFinal.NET.Helper;
 using ProjectFinal.NET.Models;
@@ -51,11 +52,8 @@ namespace ProjectFinal.NET.Controllers
                         // Passwords match, user is authenticated
                         var claims = new List<Claim>
                 {
-<<<<<<< HEAD
                      new Claim(ClaimTypes.Name, user.Email),
-=======
                     new Claim(ClaimTypes.Name, user.Email),
->>>>>>> a70b03dcb3da792ea46ca1e72f7396047b565d15
                      new Claim(ClaimTypes.Role, isAdmin ? "Admin" : "User"),
                     // Thêm các claim khác nếu cần, ví dụ: user ID, vv.
                 };
@@ -108,11 +106,9 @@ namespace ProjectFinal.NET.Controllers
 
                         Password = hashedPassword,
                         CreatedAt = DateTime.Now,
-                        IsAdmin = false,
                         IsActive = true,
-
+                        IsAdmin = false,
                     };
-                    
                     
                     db.Users.Add(user);
                     db.SaveChanges();
@@ -126,10 +122,6 @@ namespace ProjectFinal.NET.Controllers
             return RedirectToAction("Login");
         }
 
-<<<<<<< HEAD
-        
-=======
->>>>>>> a70b03dcb3da792ea46ca1e72f7396047b565d15
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
@@ -137,14 +129,145 @@ namespace ProjectFinal.NET.Controllers
             // Redirect to home page 
             return RedirectToAction("Index", "Home");
         }
-<<<<<<< HEAD
-
-=======
->>>>>>> a70b03dcb3da792ea46ca1e72f7396047b565d15
         [Authorize]
         public IActionResult Profile()
         {
             return View();
+        }
+
+        /* ---------------            ------------------ */
+        /* --------------- Admin User ------------------ */
+        public async Task<IActionResult> UserManager()
+        {
+            return db.Users != null ? View(await db.Users.ToListAsync()) :
+                        Problem("Entity set 'Project Net'  is null.");
+        }
+
+        public async Task<IActionResult> DetailManager(int? id)
+        {
+            if (id == null || db.Users == null)
+            {
+                return NotFound();
+            }
+
+            var user = await db.Users
+                .FirstOrDefaultAsync(m => m.UserId == id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return View(user);
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(
+            [Bind("UserId,Email,Password,IsActive,IsAdmin")] User user)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Add(user);
+                await db.SaveChangesAsync();
+                return RedirectToAction(nameof(UserManager));
+            }
+            return View(user);
+        }
+
+
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null || db.Users == null)
+            {
+                return NotFound();
+            }
+
+            var user = await db.Users.FindAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return View(user);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id,
+            [Bind("UserId,Email,Password,IsActive,IsAdmin")] User user)
+        {
+            if (id != user.UserId)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    db.Update(user);
+                    await db.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!UserExists(user.UserId))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(UserManager));
+            }
+            return View(user);
+        }
+
+
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null || db.Users == null)
+            {
+                return NotFound();
+            }
+
+            var user = await db.Users
+                .FirstOrDefaultAsync(m => m.UserId == id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return View(user);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            if (db.Users == null)
+            {
+                return Problem("Entity set 'Project Net'  is null.");
+            }
+            var user = await db.Users.FindAsync(id);
+            if (user != null)
+            {
+                db.Users.Remove(user);
+            }
+
+            await db.SaveChangesAsync();
+            return RedirectToAction(nameof(UserManager));
+        }
+
+
+        private bool UserExists(int id)
+        {
+            return (db.Users?.Any(e => e.UserId == id)).GetValueOrDefault();
         }
     }
 }

@@ -1,0 +1,48 @@
+﻿@model ProjectFinal.NET.Data.User
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="padding: 0 16px 30px 16px;">
+    <h2>Create User</h2>
+
+    <h4>User</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group" style="display:flex;align-items: center;margin-bottom: 12px;">
+                    <label asp-for="Email" class="control-label" style="min-width: 120px;"></label>
+                    <input asp-for="Email" class="form-control" style="width: 42%;" type="email"/>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="display:flex;align-items: center;margin-bottom: 12px;">
+                    <label asp-for="Password" class="control-label" style="min-width: 120px;"></label>
+                    <input asp-for="Password" class="form-control" style="width: 42%;" type="password"/>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="display:flex;align-items: center;margin-bottom: 12px;">
+                    <label asp-for="IsActive" class="control-label" style="min-width: 120px;"></label>
+                    <input asp-for="IsActive" class="form-control" style="width: 42%;"/>
+                    <span asp-validation-for="IsActive" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="display:flex;align-items: center;margin-bottom: 12px;">
+                    <label asp-for="IsAdmin" class="control-label" style="min-width: 120px;"></label>
+                    <input asp-for="IsAdmin" class="form-control" style="width: 42%;" />
+                    <span asp-validation-for="IsAdmin" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="margin: 20px 0;">
+                    <input type="submit" value="Create" class="btn btn-primary"
+                           style="font-size: 17px; padding: 2px 20px; border-color: blue;color: blue;cursor: pointer;" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="UserManager" style="font-size: 18px;color: red;">Back to Manager</a>
+    </div>
+</div>

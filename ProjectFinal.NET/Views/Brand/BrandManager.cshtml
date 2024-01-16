@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ProjectFinal.NET.Data.Brand>
+
+@{
+    ViewData["Title"] = "BrandManager";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="padding: 0 16px;">
+    <h2>Brand Manager</h2>
+
+    <p>
+        <a asp-action="Create" style="text-decoration: none;font-size: 20px;color: blue;">Create New</a>
+    </p>
+
+    <table class="table" style="width: 100%;">
+        <thead>
+            <tr>
+                <th style="text-align: left; margin-right: 44px; border-bottom: 2px solid red;">
+                    @Html.DisplayNameFor(model => model.IdBrand)
+                </th>
+                <th style="text-align: left; margin-right: 44px; border-bottom: 2px solid red;">
+                    @Html.DisplayNameFor(model => model.BrandName)
+                </th>
+                <th style="border-bottom: 2px solid red;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdBrand)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BrandName)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.IdBrand">Edit</a> |
+                        <a asp-action="DetailManager" asp-route-id="@item.IdBrand">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.IdBrand">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
