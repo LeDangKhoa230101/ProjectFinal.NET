@@ -1,0 +1,129 @@
+﻿@model IEnumerable<ProjectFinal.NET.Models.CartItem>
+
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- BREADCRUMB -->
+<div id="breadcrumb" class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="breadcrumb-header">Cart</h3>
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /BREADCRUMB -->
+<!-- SECTION -->
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <div class="col-12" style="padding: 0 12px;">
+                <div class="cart-table clearfix">
+                    <table class="table table-responsive">
+                        <thead style="border-bottom: 2px solid red;">
+                            <tr>
+                                <th style="border-bottom: 2px solid red; font-weight: 500;">Product</th>
+                                <th style="border-bottom: 2px solid red; font-weight: 500;">Price</th>
+                                <th style="border-bottom: 2px solid red; font-weight: 500;">Quantity</th>
+                                <th style="border-bottom: 2px solid red; font-weight: 500;">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="cart_product_img d-flex align-items-center">
+                                        <a style="display: inline-block;" asp-controller="Product" asp-action="Detail" asp-route-productId="@item.IdProduct">
+                                            <img style="width: 120px;" src="@item.Image" alt="Product">
+                                        </a>
+                                        <a asp-controller="Product" asp-action="Detail" asp-route-productId="@item.IdProduct"
+                                           style="display: inline-block; font-size: 14px; font-weight: 500;">
+                                            @item.ProductName
+                                        </a>
+                                    </td>
+                                    <td class="price" style="vertical-align: middle;">
+                                        <span>
+                                            @item.Price.ToString("#,##0") VNĐ
+                                        </span>
+                                    </td>
+                                    <td class="qty" style="vertical-align: middle;">
+                                        <div class="quantity" style="display: inline-flex; border: 1px solid red; height: 30px; font-weight: 600;">
+                                            <a asp-action="UpdateCart" asp-controller="Cart" asp-route-id="@item.IdProduct" type="button"
+                                               style="border: none; background: transparent; border-right: 1px solid red; display: flex;
+                                                        width: 30px;
+                                                        height: 100%;
+                                                        align-items: center;
+                                                        justify-content: center;">
+                                                <i class="fa fa-minus"></i>
+                                            </a>
+                                            <input class="qty-text" id="quantityInput" name="quantity" value="@item.Quantity" style="width: 44px; text-align: center;border: none; background: transparent">
+                                            <a asp-action="AddToCart" asp-controller="Cart" asp-route-id="@item.IdProduct" type="button"
+                                               style="border: none; background: transparent; border-left: 1px solid red; display: flex;
+                                                        width: 30px;
+                                                        height: 100%;
+                                                        align-items: center;
+                                                        justify-content: center;">
+                                                <i class="fa fa-plus"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td class="total_price" style="vertical-align: middle;">
+                                        <span>@item.TotalPrice.ToString("#,##0") VNĐ</span>
+                                    </td>
+                                    <td class="total_price" style="vertical-align: middle;">
+                                        <a asp-action="RemoveCart" asp-controller="Cart" asp-route-id="@item.IdProduct" 
+                                                style="background: transparent; border: none; font-size: 15px; color: red;">
+                                            Xóa
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-12" style="padding: 0 12px; display: flex; justify-content: space-between; margin-top: 50px;">
+                <div>
+                    <a href="/" style="height: 40px; display: inline-block; padding: 10px 16px; border: 1px solid red; color: red;">CONTINUE SHOPPING</a>
+                </div>
+                <div style=" width: 350px;">
+                    <h5 style=" font-size: 18px; margin-bottom: 18px;">CART TOTAL</h5>
+                    <ul style="background-color: #f4f2f8; padding: 30px;">
+                        <li style=" display: flex; align-items: center; justify-content: space-between; font-size: 16px; margin-bottom: 20px;">
+                            <span>Subtotal</span>
+                            <span>@Model.Sum(p => p.TotalPrice).ToString("#,##0") VNĐ</span>
+                        </li>
+                        <li style=" display: flex; align-items: center; justify-content: space-between; font-size: 16px; margin-bottom: 20px;">
+                            <span>Shipping</span>
+                            <span>Free</span>
+                        </li>
+                        <li style=" display: flex; align-items: center; justify-content: space-between; font-size: 16px; margin-bottom: 20px;">
+                            <span>
+                                <strong>Total</strong>
+                            </span> <span>
+                                <strong>@Model.Sum(p => p.TotalPrice).ToString("#,##0") VNĐ</strong>
+                            </span>
+                        </li>
+                    </ul>
+                    <a asp-action="Checkout" asp-controller="Cart" style="display: block; height: 40px; background: #d10024; color: white; font-size: 18px; font-weight: 600; text-align: center; padding: 7px 0;">
+                        Checkout
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /SECTION -->
